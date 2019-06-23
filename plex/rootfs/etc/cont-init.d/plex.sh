@@ -82,8 +82,9 @@ if ! bashio::fs.file_exists "${prefs}"; then
     token="$(echo "${response}" | sed -n 's/.*<authentication-token>\(.*\)<\/authentication-token>.*/\1/p')"
 
 
-    bashio::log.debug "Mounting /dev/sda1 to /mnt"
+    bashio::log.info "Mounting /dev/sda1 to /mnt"
     mount /dev/sda1 /mnt
+	mount /dev/sda /media
 
     mkdir -p "$(dirname "${prefs}")"
 

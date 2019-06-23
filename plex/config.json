@@ -19,6 +19,7 @@
   ],
   "devices": [
     "/dev/sda1:/dev/sda1:rwm"
+	"/dev/sda:/dev/sda:rwm"
   ],
   "boot": "auto",
   "ports": {

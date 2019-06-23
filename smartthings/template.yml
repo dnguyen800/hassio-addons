@@ -1,0 +1,9 @@
+mqtt: 
+  host: mqtt://{{broker_host}}:{{broker_port}}
+  preface: {{preface}}
+  state_read_suffix: {{state_suffix}}
+  command_suffix: {{command_suffix}}
+  username: {{username}}
+  password: {{password}}
+  retain: {{retain_state}}
+port: {{bridge_port}}
