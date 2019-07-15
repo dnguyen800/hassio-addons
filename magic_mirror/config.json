@@ -41,16 +41,6 @@
         "name": "MMM-iFrame",
         "git": "https://github.com/alberttwong/MMM-iFrame.git",
         "cmd": ""
-      },
-      {
-        "name": "MMM-homeassistant-sensors",
-        "git": "https://github.com/leinich/MMM-homeassistant-sensors.git",
-        "cmd": "cd $MIRROR_APP_PATH/modules/MMM-homeassistant-sensors && wget https://github.com/Templarian/MaterialDesign-Webfont/archive/master.zip && unzip master.zip"
-      },
-      {
-        "name": "MMM-HASS",
-        "git": "https://github.com/sytone/MMM-HASS.git",
-        "cmd": ""
       }
     ]
   },
