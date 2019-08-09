@@ -28,6 +28,7 @@ echo " MM_CONFIG_ROOT: $MM_CONFIG_ROOT"
 echo " MM_CONF_PATH: $MM_CONF_PATH"
 echo " MM_MODULES_PATH: $MM_MODULES_PATH"
 echo " MM_CSS_PATH: $MM_CSS_PATH"
+echo " MIRROR_APP_PATH: $MIRROR_APP_PATH"
 echo "--------------------------------------------------------------------------------"
 
 # Check for install, if not found major issue. Try to clone again.
@@ -36,8 +37,9 @@ if [ ! -d "$MIRROR_APP_PATH" ]; then
     mkdir -p "$MIRROR_APP_PATH"
     cd "$MIRROR_APP_PATH"
     git clone --depth 1 -b master https://github.com/MichMich/MagicMirror.git . 
+	echo "[INFO] Finished git clone of MM Github repository"
 else
-    echo "[INFO] Magic Mirror already installed"
+    echo "[INFO] Magic Mirror already installed, moving to next step."
 fi
 
 cd "$MIRROR_APP_PATH"
@@ -76,8 +78,11 @@ fi
 # Copy over the default configuration and modules
 # TODO: make a option to enable and disable this. 
 echo "[INFO] Copying configuration and modules"
+echo "running command: cp -Rf $MM_CONFIG_ROOT/modules $MIRROR_APP_PATH"
 cp -Rf $MM_CONFIG_ROOT/modules $MIRROR_APP_PATH
+echo "running command: cp -Rf $MM_CONFIG_ROOT/config $MIRROR_APP_PATH"
 cp -Rf $MM_CONFIG_ROOT/config $MIRROR_APP_PATH
+echo "running command: cp -Rf $MM_CONFIG_ROOT/css $MIRROR_APP_PATH"
 cp -Rf $MM_CONFIG_ROOT/css $MIRROR_APP_PATH
 
 # Versions for debugging if needed.
@@ -89,14 +94,14 @@ echo "[INFO] NPM Version: $NPM_CURRENT"
 # GIT Update
 if [ "$GITUPDATE" == "true" ];
 then
-    echo "[INFO] Updating Magic Mirror install"
+    echo "[INFO] Updating Magic Mirror install. running command: git pull"
     git pull
 fi
 
 #NPM Update
 if [ "$NPMUPDATE" == "true" ];
 then
-    echo "[INFO] Updating NPM to latest"
+    echo "[INFO] Updating NPM to latest. Running command: npm i npm@latest -g"
     npm i npm@latest -g
     NPM_CURRENT=$(npm -v)
     echo "[INFO] NPM Version: $NPM_CURRENT"
@@ -105,7 +110,7 @@ fi
 # NPM Install
 if [ "$NPMINSTALL" == "true" ];
 then
-    echo "[INFO] Running NPM Install"
+    echo "[INFO] Running NPM Install. Running command: npm install --unsafe-perm --silent"
     if npm install --unsafe-perm --silent; then 
         echo "[INFO] Dependencies installation Done!"
     else
