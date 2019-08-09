@@ -11,7 +11,10 @@ MagicMirror² is an open source modular smart mirror platform. With a growing li
 of installable modules, the MagicMirror² allows you to convert your hallway or 
 bathroom mirror into your personal assistant. 
 
-Learn more about MagicMirror² [here](https://magicmirror.builders/)
+Learn more about MagicMirror² [here](https://magicmirror.builders/). Original Hass.io add-on by [@sytone](https://github.com/sytone/hassio-addons). Updated by me to work out-of-the-box with the latest Home Assistant.
+
+- Updated ``config.json`` to include architecture ``arch`` keys.
+- Updated ``config.js`` sample to remove ``MMM-HASS`` module, which was causing add-on startup to fail.
 
 ## Installation
 

@@ -47,16 +47,12 @@ var config = {
 			}
 		},
 		{
-			module: "compliments",
-			position: "lower_third"
-		},
-		{
 			module: "currentweather",
 			position: "top_right",
 			config: {
-				location: "New York",
-				locationID: "",  //ID from http://bulk.openweathermap.org/sample/city.list.json.gz; unzip the gz file and find your city
-				appid: "YOUR_OPENWEATHER_API_KEY"
+				location: "Milpitas",
+				locationID: "5373327",  // Go to https://openweathermap.org/find , search for your city, and copy the 7-digit number in the URL. For example, Milpitas is https://openweathermap.org/city/5373327
+				appid: "YOUR_OPENWEATHER_API_KEY" // Create an account and obtain key from https://openweathermap.org/
 			}
 		},
 		{
@@ -64,9 +60,9 @@ var config = {
 			position: "top_right",
 			header: "Weather Forecast",
 			config: {
-				location: "New York",
-				locationID: "5128581",  //ID from http://bulk.openweathermap.org/sample/city.list.json.gz; unzip the gz file and find your city
-				appid: "YOUR_OPENWEATHER_API_KEY"
+				location: "Milpitas",
+				locationID: "5373327",  // Go to https://openweathermap.org/find , search for your city, and copy the 7-digit number in the URL. For example, Milpitas is https://openweathermap.org/city/5373327
+				appid: "YOUR_OPENWEATHER_API_KEY" // Create an account and obtain key from https://openweathermap.org/
 			}
 		},
 		{
