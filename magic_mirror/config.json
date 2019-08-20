@@ -1,37 +1,51 @@
 {
-  "name": "MM²",
+  "name": "MagicMirror²",
   "version": "0.23.3",
   "slug": "magic_mirror",
   "description": "MagicMirror² is an open source modular smart mirror platform. This run the server in you HASS.IO environment.",
-  "url": "https://github.com/dnguyen800/hassio-addons",
+  "url": "https://github.com/sytone/hassio-addons",
+  "arch": ["armhf", "armv7", "aarch64", "i386", "amd64"],
   "startup": "application",
   "boot": "auto",
   "homeassistant_api": true,
-  "arch": [
-    "amd64",
-    "armhf",
-    "i386",
-    "armv7",
-    "aarch64"
-  ],  
   "ports": {
     "8080/tcp": 8181
   },
   "options": {
-    "gitupdate": false,
+    "gitupdate": true,
     "npmupdate": false,
     "npminstall": false,
     "modules": [
       {
-        "name": "MMM-HASS",
-        "git": "https://github.com/aserramonner/MMM-HASS.git",
+        "name": "MMM-OnScreenMenu",
+        "git": "https://github.com/sytone/MMM-OnScreenMenu.git",
+        "cmd": ""
+      },
+      {
+        "name": "DailyXKCD",
+        "git": "https://github.com/Blastitt/DailyXKCD.git",
+        "cmd": ""
+      },
+      {
+        "name": "MMM-pages",
+        "git": "https://github.com/edward-shen/MMM-pages.git",
+        "cmd": ""
+      },
+      {
+        "name": "MMM-iFrame",
+        "git": "https://github.com/alberttwong/MMM-iFrame.git",
         "cmd": ""
       },
       {
         "name": "MMM-homeassistant-sensors",
         "git": "https://github.com/leinich/MMM-homeassistant-sensors.git",
+        "cmd": "cd $MIRROR_APP_PATH/modules/MMM-homeassistant-sensors && wget https://github.com/Templarian/MaterialDesign-Webfont/archive/master.zip && unzip master.zip"
+      },
+      {
+        "name": "MMM-HASS",
+        "git": "https://github.com/aserramonner/MMM-HASS.git",
         "cmd": ""
-      }	
+      }
     ]
   },
   "schema": {
