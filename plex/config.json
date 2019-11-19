@@ -1,9 +1,9 @@
 {
-  "name": "Plex Media Server",
+  "name": "Plex Media Server (w/ USB mount)",
   "version": "dev",
   "slug": "plex",
   "description": "Recorded media, live TV, online news, and podcasts ready to stream.",
-  "url": "https://github.com/hassio-addons/addon-plex",
+  "url": "https://github.com/dnguyen800/hassio-addons",
   "webui": "http://[HOST]:[PORT:32400]/web",
   "startup": "services",
   "arch": [
@@ -13,14 +13,11 @@
     "i386"
   ],
   "map": [
-    "config:rw",
     "share:rw",
     "ssl"
   ],
-  "devices": [
-    "/dev/sda1:/dev/sda1:rwm"
-  ],
-  "full_access": true
+  "devices": ["/dev/sda1:/dev/sda1:rwm"],
+  "full_access": true,
   "boot": "auto",
   "ports": {
     "1900/udp": 1900,

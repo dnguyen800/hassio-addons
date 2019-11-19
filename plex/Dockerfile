@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/ubuntu-base:3.1.0
+ARG BUILD_FROM=hassioaddons/ubuntu-base:4.0.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -12,7 +12,7 @@ RUN \
     \
     && apt-get install -y --no-install-recommends \
         xmlstarlet=1.6.1-2 \
-        uuid-runtime=2.31.1-0.4ubuntu3 \
+        uuid-runtime=2.31.1-0.4ubuntu3.4 \
         unrar=1:5.5.8-1 \
         unzip=6.0-21ubuntu1 \
     \
@@ -22,7 +22,7 @@ RUN \
     && if [ "${BUILD_ARCH}" = "i386" ]; then ARCH="x86"; fi \
     \
     && curl -J -L -o /tmp/plexmediaserver.tgz \
-        "https://downloads.plex.tv/plex-media-server-new/1.15.4.993-bb4a2cb6c/synology/PlexMediaServer-1.15.4.993-bb4a2cb6c-${ARCH}.spk" \
+        "https://downloads.plex.tv/plex-media-server-new/1.18.1.1973-0f4abfbcc/synology/PlexMediaServer-1.18.1.1973-0f4abfbcc-${ARCH}.spk" \
     \
     && mkdir /usr/lib/plexmediaserver \
     && tar -xOf /tmp/plexmediaserver.tgz package.tgz | tar -xzf - -C /usr/lib/plexmediaserver/ \

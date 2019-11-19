@@ -81,11 +81,6 @@ if ! bashio::fs.file_exists "${prefs}"; then
 
     token="$(echo "${response}" | sed -n 's/.*<authentication-token>\(.*\)<\/authentication-token>.*/\1/p')"
 
-
-    bashio::log.info "Mounting /dev/sda1 to /mnt"
-    mount /dev/sda1 /mnt
-	mount /dev/sda /media
-
     mkdir -p "$(dirname "${prefs}")"
 
     cat > "${prefs}" <<-EOF
@@ -100,4 +95,18 @@ EOF
 
     mkdir -p "/share/transcode"
     setPref "TranscoderTempDirectory" "/share/transcode"
+	
+    set -e
+
+	# Mount USB drive to /share/hdd directory
+	
+    if [[ ! -e /share/hdd ]]; then
+        mkdir -p /share/hdd
+        chmod -R 0777 /share/hdd
+    fi
+
+    if [[ -e /dev/sda1 ]]; then
+        mount /dev/sda1 /share/hdd
+    fi
+	
 fi
