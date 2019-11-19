@@ -96,17 +96,9 @@ EOF
     mkdir -p "/share/transcode"
     setPref "TranscoderTempDirectory" "/share/transcode"
 	
-    set -e
-
 	# Mount USB drive to /share/hdd directory
-	
-    if [[ ! -e /share/hdd ]]; then
-        mkdir -p /share/hdd
-        chmod -R 0777 /share/hdd
-    fi
+	mkdir -p "/share/hdd"
+    chmod -R 0777 "/share/hdd"
+    mount "/dev/sda1" "/share/hdd"
 
-    if [[ -e /dev/sda1 ]]; then
-        mount /dev/sda1 /share/hdd
-    fi
-	
 fi

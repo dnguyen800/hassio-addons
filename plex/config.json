@@ -2,8 +2,8 @@
   "name": "Plex Media Server (w/ USB mount)",
   "version": "dev",
   "slug": "plex",
-  "description": "Recorded media, live TV, online news, and podcasts ready to stream.",
-  "url": "https://github.com/dnguyen800/hassio-addons",
+  "description": "Recorded media, live TV, online news, and podcasts ready to stream. DISABLE PROTECTION MODE!!",
+  "url": "https://github.com/dnguyen800/hassio-addons/plex",
   "webui": "http://[HOST]:[PORT:32400]/web",
   "startup": "services",
   "arch": [
@@ -51,11 +51,13 @@
   "host_network": false,
   "options": {
     "claim_code": "",
-    "webtools": false
+    "webtools": false,
+	"mount_path": "/dev/sda1"
   },
   "schema": {
     "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)?",
     "claim_code": "str",
-    "webtools": "bool"
+    "webtools": "bool",
+	"mount_path": "str"
   }
 }
