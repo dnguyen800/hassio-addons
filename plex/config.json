@@ -19,8 +19,8 @@
   ],
   "devices": [
     "/dev/sda1:/dev/sda1:rwm"
-	"/dev/sda:/dev/sda:rwm"
   ],
+  "full_access": true
   "boot": "auto",
   "ports": {
     "1900/udp": 1900,
